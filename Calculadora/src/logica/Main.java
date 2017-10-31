@@ -32,7 +32,7 @@ public class Main {
 			prioridad.add(pCerrado);
 
 			System.out.println("Ingrese la ecuacion: ");
-
+			int numeroNegativo=0;
 			Scanner entradaEscaner = new Scanner(System.in);
 			ecuacion = entradaEscaner.nextLine();
 
@@ -45,7 +45,10 @@ public class Main {
 			}
 			for (int i = 0; i < ecuacionP.length; i++) {
 				String caracter = ecuacionP[i];
-				if (caracter.equals("+") || caracter.equals("-") || caracter.equals("*") || caracter.equals("/")
+				if(caracter.equals("-")){
+					numeroNegativo=-1;
+				}
+				if (caracter.equals("+") ||  caracter.equals("*") || caracter.equals("-") || caracter.equals("/")
 						|| caracter.equals("(") || caracter.equals(")")) {
 					if (operador.isEmpty())
 						operador.push(caracter);
@@ -71,8 +74,15 @@ public class Main {
 							break;
 						}
 					}
-				} else
-					operando.push(Double.parseDouble(caracter));
+				} else{
+					if(numeroNegativo==-1){
+						operando.push(Double.parseDouble(caracter) * numeroNegativo);
+						numeroNegativo=0;
+					}
+					else
+						operando.push(Double.parseDouble(caracter));
+				}
+					
 			}
 			limpiarPilaOperadores();
 			System.out.println(operando.peek());
@@ -105,7 +115,7 @@ public class Main {
 		case "-":
 			if (je.getRestar() > 0) {
 				realizarOperacion(operador.peek());
-				operador.push("-");
+				operador.push("+");
 			} else
 				operador.push(caracter);
 			break;
@@ -141,14 +151,15 @@ public class Main {
 			operador.pop();
 		} else {
 			double operando2 = operando.pop();
-			double operando1 = operando.pop();
+			double operando1;
+			if(operando.isEmpty())
+				operando1=0;
+			else
+			   operando1 = operando.pop();
 			switch (operador2) {
 			case "+":
-				operando.push(operando1 + operando2);
-				operador.pop();
-				break;
 			case "-":
-				operando.push(operando1 - operando2);
+				operando.push(operando1 + operando2);
 				operador.pop();
 				break;
 			case "*":
