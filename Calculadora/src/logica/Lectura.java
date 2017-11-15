@@ -27,9 +27,11 @@ public class Lectura {
 		FileReader f = new FileReader("C:/Users/Incen/Desktop/cadn.txt");
 		BufferedReader b = new BufferedReader(f);
 		while ((cadena = b.readLine()) != null) {
-			Main m = new Main();
+			/*Main m = new Main();
 			m.realizarEcuacion(cadena);
-			m =null;
+			m =null;*/
+			Prefijo p = new Prefijo();
+			p.realizarEcuacion(cadena);
 		}
 		b.close();
 	}
