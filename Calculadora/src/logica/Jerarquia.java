@@ -9,10 +9,10 @@ public class Jerarquia {
 	private int dividir;
 	private int parentesisAbierto;
 	private int parentesisCerrado;
-	
+	private int potencia;
 
 	public Jerarquia(String nombreOperador, int sumar, int restar, int multiplicar, int dividir, int parentesisAbierto,
-			int parentesisCerrado) {
+			int parentesisCerrado, int potencia) {
 		this.nombreOperador = nombreOperador;
 		this.sumar = sumar;
 		this.restar = restar;
@@ -20,6 +20,7 @@ public class Jerarquia {
 		this.dividir = dividir;
 		this.parentesisAbierto = parentesisAbierto;
 		this.parentesisCerrado = parentesisCerrado;
+		this.potencia= potencia;
 	}
 	public String getNombreOperador() {
 		return nombreOperador;
@@ -63,6 +64,11 @@ public class Jerarquia {
 	public void setParentesisCerrado(int parentesisCerrado) {
 		this.parentesisCerrado = parentesisCerrado;
 	}
-	
+	public int getPotencia() {
+		return potencia;
+	}
+	public void setPotencia(int potencia) {
+		this.potencia = potencia;
+	}
 	
 }

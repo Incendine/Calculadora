@@ -1,6 +1,5 @@
 package logica;
 
-import java.awt.FileDialog;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -19,23 +18,19 @@ public class Lectura {
 			// TODO: handle exception
 			e.getMessage();
 		}
-		
+
 	}
 
 	public static void leerArchivo() throws FileNotFoundException, IOException {
-		JFileChooser fc = new JFileChooser();
-		FileNameExtensionFilter filtro = new FileNameExtensionFilter("*.TXT", "txt");
-		fc.setFileFilter(filtro);
-		int seleccion = fc.showOpenDialog(null);
-		if (seleccion == JFileChooser.APPROVE_OPTION) {
-
-			FileReader f = new FileReader(fc.getName());
-			BufferedReader b = new BufferedReader(f);
-			while (b.readLine() != null) {
-				// Metodo de calculadora
-
-			}
-			b.close();
+		
+		String cadena;
+		FileReader f = new FileReader("C:/Users/Incen/Desktop/cadn.txt");
+		BufferedReader b = new BufferedReader(f);
+		while ((cadena = b.readLine()) != null) {
+			Main m = new Main();
+			m.realizarEcuacion(cadena);
+			m =null;
 		}
+		b.close();
 	}
 }
