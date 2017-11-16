@@ -27,6 +27,7 @@ public class ScrollDemo2 extends JPanel implements MouseListener {
         JLabel instructionsRight = new JLabel(
                         "Click right mouse button to clear drawing area.");
         JPanel instructionPanel = new JPanel(new GridLayout(0,1));
+        
         instructionPanel.setFocusable(true);
         instructionPanel.add(instructionsLeft);
         instructionPanel.add(instructionsRight);
