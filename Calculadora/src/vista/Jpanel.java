@@ -7,20 +7,25 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
 
 public class Jpanel extends JPanel {
-	private JTextField textfield1;
+	private JTextField textField;
 	/**
 	 * Create the panel.
 	 */
 	public Jpanel() {
-		setLayout(new BorderLayout(0, 0));
 		setBackground(Color.BLUE);
+		
+		
+
 	}
 	
 	 public void paint (Graphics g)
 	    {
-		 	super.paint(g);
+		 	super.paintComponent(g);
 
 	        g.setColor (Color.red);
 	        g.fillOval(10, 200, 60, 60); 
