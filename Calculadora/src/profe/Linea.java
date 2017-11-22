@@ -24,7 +24,7 @@ public class Linea extends JPanel {
     protected void paintComponent(Graphics grphcs) {
         super.paintComponent(grphcs); //To change body of generated methods, choose Tools | Templates.
         grphcs.setColor(Color.RED);
-        grphcs.drawLine(0, 0, this.getPreferredSize().height, this.getPreferredSize().width);
+        grphcs.drawLine(this.getPreferredSize().height, 0,0, this.getPreferredSize().width);
     }
 
 }

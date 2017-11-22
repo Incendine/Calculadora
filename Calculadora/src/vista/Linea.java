@@ -16,15 +16,22 @@ import javax.swing.JPanel;
  */
 public class Linea extends JPanel {
 
-    public Linea(int lado) {
-        setPreferredSize(new Dimension(50, 70));
-    }
+	private int ladito;
 
-    @Override
-    protected void paintComponent(Graphics grphcs) {
-        super.paintComponent(grphcs); 
-        grphcs.setColor(Color.RED);
-        grphcs.drawLine(0, 0, this.getPreferredSize().height, this.getPreferredSize().width);
-    }
+	public Linea(int lado) {
+		setPreferredSize(new Dimension(50, 50));
+		this.ladito = lado;
+	}
+
+	@Override
+	protected void paintComponent(Graphics grphcs) {
+		super.paintComponent(grphcs);
+		grphcs.setColor(Color.GREEN);
+		if (ladito == 1)
+			grphcs.drawLine(0, 0, this.getPreferredSize().height, this.getPreferredSize().width);
+		else
+			grphcs.drawLine(this.getPreferredSize().height, 0,0, this.getPreferredSize().width);
+
+	}
 
 }

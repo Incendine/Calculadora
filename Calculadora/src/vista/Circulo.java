@@ -6,6 +6,7 @@
 package vista;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 
@@ -18,6 +19,7 @@ public class Circulo extends JPanel{
     private String numero;
     
     public Circulo(String figura) {
+    	setPreferredSize(new Dimension(50, 50));
         this.numero=figura;
     }
     

@@ -24,7 +24,7 @@ public class Lectura {
 	public static void leerArchivo() throws FileNotFoundException, IOException {
 		
 		String cadena;
-		FileReader f = new FileReader("C:/Users/Eduardo Sánchez/Desktop/calculadora.txt");
+		FileReader f = new FileReader("C:\\Users\\Incen\\Desktop\\cadn.txt");
 		BufferedReader b = new BufferedReader(f);
 		while ((cadena = b.readLine()) != null) {
 			Main m = new Main();
