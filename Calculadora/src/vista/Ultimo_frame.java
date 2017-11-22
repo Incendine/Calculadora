@@ -17,13 +17,16 @@ public class Ultimo_frame {
 	public static void main(String[] args) {
 		// TODO code application logic here
 		JFrame f = new JFrame("Calculadora");
-		f.setSize(new Dimension(400, 400));
+		f.setSize(new Dimension(500, 500));
 		
 		p = new JPanel();
 		p.setBackground(Color.GRAY);
-		p.setPreferredSize(new Dimension(2000, 2000));
+		p.setPreferredSize(new Dimension(1000, 1000));
 		p.setLayout(null);
 		recursivo("+*345", 500, 100, 0);
+		p.setPreferredSize(new Dimension((int) Math.pow(2, nivel)*50+500, nivel*50+250));
+		System.out.println(nivel);
+		
 /*
 		JPanel pc = new Circulo("10");
 		p.add(pc);
@@ -42,7 +45,7 @@ public class Ultimo_frame {
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
-	
+	static int nivel=0;
 	public static void recursivo(String ecuacion,int x, int y, int linea) {
 		if(ecuacion.length()==0) {
 			return;
@@ -75,6 +78,7 @@ public class Ultimo_frame {
 						p.add(lc);
 						lc.setBounds(x+150,y-50,pc.getPreferredSize().width,pc.getPreferredSize().height);
 						recursivo(ecuacionRestante, x+200,y, 1);
+						nivel=nivel+2;
 					}else
 					{
 						JPanel lc = new Linea(1);
